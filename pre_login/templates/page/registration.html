@@ -1,0 +1,74 @@
+{% extends "page/header.html" %}
+
+{% block content %}
+<style>
+    #mainbox
+    {
+        position: relative;
+        border-radius: 40px;
+        border-style: ridge;
+        height: 37em;
+        width: 35em;
+        margin: auto;
+        margin-top: 3em;
+        align-content:center;
+        padding: 3em;
+        padding-top: 1em;
+        background-color: rgb(0,0,0,0.4);
+    } 
+
+    input,.btn 
+    {
+        /* padding: 12px; */
+        border: none;
+        border-radius: 4px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.85;
+        display: inline-block;
+        font-size: 1em;
+        line-height: 20px;
+        text-decoration: none;
+    }
+
+    input:hover,.btn:hover 
+    {
+        opacity: 1;
+    }
+
+    input[type=submit] 
+    {
+        background-color: #DC381E;
+        color: white;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover 
+    {
+    background-color: #DC381E;
+    }
+
+    .allign
+    {
+        margin:auto;
+        text-align: center;
+    }
+</style>
+<body stye="padding: 5em 0">
+    <div class="container" id="mainbox">
+        <div class="row">
+            <div class="col-12 allign">
+                <h2 style="color:#f0f8ff">Enter your details</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 allign">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
